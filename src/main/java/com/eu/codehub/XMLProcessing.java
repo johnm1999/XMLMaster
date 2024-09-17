@@ -45,8 +45,8 @@ public class XMLProcessing {
 
 //         - Use Case: Generate Statistics From XML file
 
-        StatisticsOfXmlFile soxf = new StatisticsOfXmlFile();
-        soxf.statisticsXml("xml_file/sample-lorem-ipsum-text-file.xml");
+//        StatisticsOfXmlFile soxf = new StatisticsOfXmlFile();
+//        soxf.statisticsXml("xml_file/sample-lorem-ipsum-text-file.xml");
 
     }
 }
