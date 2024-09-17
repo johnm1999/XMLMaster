@@ -1,8 +1,11 @@
 package com.eu.codehub;
 
+import com.eu.codehub.model.Book;
+import com.eu.codehub.services.GenerateXsdFromModel;
 import com.eu.codehub.services.ReadFromXml;
 import com.eu.codehub.services.StatisticsOfXmlFile;
 import com.eu.codehub.services.TxtToXmlParser;
+import com.eu.codehub.services.Validation;
 import java.util.Arrays;
 import java.util.List;
 import lombok.Locked.Read;
@@ -47,6 +50,23 @@ public class XMLProcessing {
 
 //        StatisticsOfXmlFile soxf = new StatisticsOfXmlFile();
 //        soxf.statisticsXml("xml_file/sample-lorem-ipsum-text-file.xml");
+
+
+//       --------------------------------------------------------------   
+
+//         - Use Case: Generate Statistics From XML file
+
+//        GenerateXsdFromModel xsdFromModel = new GenerateXsdFromModel();
+//        xsdFromModel.generator(Book.class, "xsd_file/book.xsd");
+//        System.out.println("XSD scema generated successfully!!");
+
+//       --------------------------------------------------------------   
+
+//         - Use Case: Generate Statistics From XML file
+
+        Validation v = new Validation();
+        v.validateXsd("xsd_file/book.xsd", "xml_file/sample-lorem-ipsum-text-file.xml");
+
 
     }
 }
