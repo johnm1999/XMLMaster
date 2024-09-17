@@ -6,9 +6,11 @@ import com.eu.codehub.services.ReadFromXml;
 import com.eu.codehub.services.StatisticsOfXmlFile;
 import com.eu.codehub.services.TxtToXmlParser;
 import com.eu.codehub.services.Validation;
+import com.eu.codehub.services.WriteToXml;
 import java.util.Arrays;
 import java.util.List;
 import lombok.Locked.Read;
+import org.w3c.dom.Element;
 
 public class XMLProcessing {
 
@@ -64,8 +66,8 @@ public class XMLProcessing {
 
 //         - Use Case: Generate Statistics From XML file
 
-        Validation v = new Validation();
-        v.validateXsd("xsd_file/book.xsd", "xml_file/sample-lorem-ipsum-text-file.xml");
+//        Validation v = new Validation();
+//        v.validateXsd("xsd_file/book.xsd", "xml_file/sample-lorem-ipsum-text-file.xml");
 
 
     }
