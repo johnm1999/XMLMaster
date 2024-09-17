@@ -37,6 +37,20 @@ public class ReadFromXml {
 
                     if (selectedChapters.contains(id)) {
                         readingList.add(elementChapter);
+                        System.out.println("Chapter ID: " + id);
+                        NodeList paragraphList = elementChapter.getElementsByTagName("paragraph");
+                        for (int j = 0; j < paragraphList.getLength(); j++) {
+                            Element paragraphElement = (Element) paragraphList.item(j);
+                            System.out.println(" Paragraph " + (j + 1) + ":");
+
+                            NodeList sentenceList = paragraphElement.getElementsByTagName("sentence");
+
+                            for (int k = 0; k < sentenceList.getLength(); k++) {
+                                Element sentenceElement = (Element) sentenceList.item(k);
+                                System.out.println("  Sentence " + (k + 1) + ": " + sentenceElement.getTextContent());
+                            }
+                        }
+                        System.out.println("----------------------");
                     }
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid ID format for Chapter " + (i + 1) + ": " + elementChapter.getAttribute("id"));
