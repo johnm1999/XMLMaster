@@ -50,12 +50,12 @@ public class XMLProcessing {
 //        StatisticsOfXmlFile soxf = new StatisticsOfXmlFile();
 //        soxf.statisticsXml("xml_file/sample-lorem-ipsum-text-file.xml");
 //       --------------------------------------------------------------   
-//         - Use Case: Generate Statistics From XML file
+//         - Use Case: Generate XSD file
 //        GenerateXsdFromModel xsdFromModel = new GenerateXsdFromModel();
 //        xsdFromModel.generator(Book.class, "xsd_file/book.xsd");
 //        System.out.println("XSD scema generated successfully!!");
 //       --------------------------------------------------------------   
-//         - Use Case: Generate Statistics From XML file
+//         - Use Case: Validation XSD and XML
 //        Validation v = new Validation();
 //        v.validateXsd("xsd_file/book.xsd", "xml_file/sample-lorem-ipsum-text-file.xml");
     }
