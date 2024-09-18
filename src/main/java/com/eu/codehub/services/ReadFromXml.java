@@ -12,7 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadFromXml {
-
+    
+/***
+ * 
+ * @param inputFile
+ * @param selectedChapters
+ * @return List Element
+ * Takes line by line and separate it 
+ * Show the result at terminal
+ * some souts with lines for well form output
+ * 
+ */
     public List<Element> ReadXmlChapter(String inputFile, List<Integer> selectedChapters) {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         List<Element> readingList = new ArrayList<>();

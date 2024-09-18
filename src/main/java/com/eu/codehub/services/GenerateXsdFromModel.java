@@ -8,6 +8,11 @@ import java.io.IOException;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
 
+/***
+ * JAXB
+ * Exceptions 
+ * @author John
+ */
 public class GenerateXsdFromModel {
 
     public  void generator(Class<?> clazz, String outputPath){
@@ -18,19 +23,19 @@ public class GenerateXsdFromModel {
             // Create XSD
             jaxbContext.generateSchema(new SchemaOutputResolver() {
                 @Override
-                public Result createOutput(String namespaceUri, String suggestedFileName) throws IOException {
+                public Result createOutput(String namespaceUri, String suggestedFileName){
                     File file = new File(outputPath);
                     StreamResult result = new StreamResult(file);
                     result.setSystemId(file.getAbsolutePath());
                     return result;
                 }
             });
-            System.out.println("Το XSD schema δημιουργήθηκε επιτυχώς στο: " + outputPath);
+            System.out.println("Successfully XSD Creation: " + outputPath);
 
         } catch (JAXBException e) {
-            System.err.println("Σφάλμα κατά την επεξεργασία του JAXB: " + e.getMessage());
+            System.err.println("Exception JAXB: " + e.getMessage());
         } catch (IOException e) {
-            System.err.println("Σφάλμα κατά την εγγραφή του XSD αρχείου: " + e.getMessage());
+            System.err.println("Can't create XSD: " + e.getMessage());
         }
 
     }

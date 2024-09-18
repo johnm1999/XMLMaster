@@ -19,6 +19,7 @@ import org.w3c.dom.NodeList;
 
 public class WriteToXml {
     public void createXmlFromReadingList(List<Element> readingList, String outputFile){
+        
     
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db;

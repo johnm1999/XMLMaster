@@ -92,7 +92,7 @@ public class TxtToXmlParser {
 
         xmlWriter.close();
 
-        System.out.println("Το XML αρχείο δημιουργήθηκε με επιτυχία: " + outputFile);
+        System.out.println("XML has been created!!:" + outputFile);
     }
 
     private static void writeSimpleElement(XMLStreamWriter writer, String elementName, String elementValue) throws Exception {

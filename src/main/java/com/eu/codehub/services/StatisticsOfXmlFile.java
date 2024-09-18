@@ -12,7 +12,14 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 public class StatisticsOfXmlFile {
-
+    /***
+     * 
+     * @param inputFile 
+     * You can see fields that hold the statistics(paragraphs,sentences,etc)
+     * Line by Line Reading
+     * Nodes to hold every list 
+     * 
+     */
     public void statisticsXml(String inputFile) {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 
