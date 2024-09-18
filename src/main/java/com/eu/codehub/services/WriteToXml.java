@@ -18,8 +18,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class WriteToXml {
-    public void createXmlFromReadingList(List<Element> readingList, String outputFile) 
-            throws TransformerConfigurationException, TransformerException {
+    public void createXmlFromReadingList(List<Element> readingList, String outputFile){
     
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db;
@@ -62,17 +61,23 @@ public class WriteToXml {
             }
         }
 
-        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-        Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-        transformer.setOutputProperty(OutputKeys.METHOD, "xml");
-        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+        try {
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.METHOD, "xml");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
 
-        DOMSource source = new DOMSource(newDoc);
-        StreamResult result = new StreamResult(new File(outputFile));
+            DOMSource source = new DOMSource(newDoc);
+            StreamResult result = new StreamResult(new File(outputFile));
 
-        transformer.transform(source, result);
+            transformer.transform(source, result);
 
-        System.out.println("XML file created: " + outputFile);
+            System.out.println("XML Created: " + outputFile);
+        } catch (TransformerConfigurationException e) {
+            System.err.println("Exception Transformer: " + e.getMessage());
+        } catch (TransformerException e) {
+            System.err.println("Exception XML creation: " + e.getMessage());
+        }
     }
 }
